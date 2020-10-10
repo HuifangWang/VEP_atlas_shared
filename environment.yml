@@ -1,0 +1,45 @@
+name: vep_atlas
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - blas=1.0=mkl
+  - ca-certificates=2020.7.22=0
+  - certifi=2020.6.20=py38_0
+  - h5py=2.10.0=nompi_py38h106b333_102
+  - hdf5=1.10.5=nompi_h0cbb7df_1103
+  - intel-openmp=2019.4=233
+  - joblib=0.17.0=py_0
+  - libcxx=10.0.0=1
+  - libedit=3.1.20191231=h1de35cc_1
+  - libffi=3.3=hb1e8313_2
+  - libgfortran=3.0.1=0
+  - llvm-openmp=10.0.0=h28b9765_0
+  - mkl=2019.4=233
+  - mkl-service=2.3.0=py38hfbe908c_0
+  - mkl_fft=1.2.0=py38hc64f4ea_0
+  - mkl_random=1.1.1=py38h959d312_0
+  - ncurses=6.2=h0a44026_1
+  - nibabel=3.1.1=py_0
+  - numpy=1.19.1=py38h3b9f5b6_0
+  - numpy-base=1.19.1=py38hcfb5961_0
+  - openssl=1.1.1h=haf1e3a3_0
+  - packaging=20.4=pyh9f0ad1d_0
+  - pip=20.2.3=py38_0
+  - pydicom=2.0.0=pyh9f0ad1d_0
+  - pyparsing=2.4.7=pyh9f0ad1d_0
+  - python=3.8.5=h26836e1_1
+  - python_abi=3.8=1_cp38
+  - readline=8.0=h1de35cc_0
+  - scikit-learn=0.23.2=py38h959d312_0
+  - scipy=1.5.0=py38hbab996c_0
+  - setuptools=50.3.0=py38h0dc7051_1
+  - six=1.15.0=py_0
+  - sqlite=3.33.0=hffcf06c_0
+  - threadpoolctl=2.1.0=pyh5ca1d4c_0
+  - tk=8.6.10=hb0a8c7a_0
+  - wheel=0.35.1=py_0
+  - xz=5.2.5=h1de35cc_0
+  - zlib=1.2.11=h1de35cc_3
+prefix: /Users/pault/miniconda3/envs/vep_atlas
