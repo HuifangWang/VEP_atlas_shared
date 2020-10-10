@@ -4,14 +4,14 @@
 vep_atlas_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" 
 
 # subject name
-SUBJECT="sub-tmp" 
+SUBJECT="subject_name" 
 
 # where should results be stored
-SUBJECTS_DIR="/Users/pault/Projects/EPINOV/code/VEP_atlas_shared/tmp/" 
+SUBJECTS_DIR="/path/to/store/results/" 
 export SUBJECTS_DIR
 
 # point this to the T1 image you want to process
-T1_image="/Users/pault/Projects/EPINOV/code/VEP_atlas_shared/tmp/T1.RAS.RO.nii.gz"
+T1_image="/path/to/T1_image.nii.gz"
 
 # set nthread to number of cores you want ot use for parallel processing
 nthread=8
