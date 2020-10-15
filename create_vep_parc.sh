@@ -7,17 +7,17 @@ vep_atlas_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
 SUBJECT="subject_name" 
 
 # where should results be stored
-SUBJECTS_DIR="/path/to/store/results/" 
+SUBJECTS_DIR="/where/to/store/results//" 
 export SUBJECTS_DIR
 
 # point this to the T1 image you want to process
-T1_image="/path/to/T1_image.nii.gz"
+T1_image="/path/to/my/T1_image.nii.gz"
 
 # set nthread to number of cores you want ot use for parallel processing
-nthread=8
+nthread=1
 
 # run Freesurfers recon-all pipeline
-# recon-all -s ${SUBJECT} -i ${T1_image} -all -parallel -openmp ${nthread}
+recon-all -s ${SUBJECT} -i ${T1_image} -all -parallel -openmp ${nthread}
 
 # loop across right and left hemisphere
 for hemi in lh rh
