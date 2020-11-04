@@ -34,4 +34,5 @@ The volumentric parcellation/segmentation can be found here :
 ${SUBJECTS_DIR}/${SUBJECT}/mri/aparc+aseg.vep.mgz
 
 ## Citation
-Coming soon.
+Huifang E. Wang, Julia Scholly, Paul Triebkorn, Viktor Sip, Samuel MedinaVillalon, Marmaduke M. Woodman, Arnaud Le Troter, Maxime Guye, Fab-rice Bartolomei, and Viktor Jirsa.  VEP atlas:  An anatomic and functionalhuman brain atlas dedicated to epilepsy patients.Journal of NeuroscienceMethods, page 108983, oct 2020.
+https://doi.org/10.1016/j.jneumeth.2020.108983
