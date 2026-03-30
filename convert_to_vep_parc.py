@@ -189,7 +189,12 @@ def op_split(labels, mode, geom, label_in, labels_out, method, factors=None):
     for label_out, xfr, xto in zip(reversed(labels_out), limits[:-1], limits[1:]):
         imask = (xcoords >= xfr) * (xcoords < xto)
         mask = [idxs[imask] for idxs in indsl]
-        labels[mask] = label_out
+        # labels[mask] = label_out # did change the whole slice. 
+        
+        if len(labels.shape)==1:
+            labels[mask] = label_out
+        else:
+            labels[mask[0],mask[1],mask[2]] = label_out
 
 
 def op_splitto(labels, mode, geom, label_in, labels_out, method):
@@ -256,7 +261,10 @@ def op_splitto(labels, mode, geom, label_in, labels_out, method):
     for lab, x_fr, x_to in zip(labels_out, limits[:-1], limits[1:]):
         imask = (xcoords >= x_fr) * (xcoords < x_to)
         mask = [idxs[imask] for idxs in indsl]
-        labels[mask] = lab
+        if len(labels.shape)==1:
+            labels[mask] = lab
+        else:
+            labels[mask[0],mask[1],mask[2]] = lab
 
 
 def op_splitmes(labels, hemi, verts, triangs, label_in, labels_out):
@@ -343,7 +351,8 @@ def convert_parc(destrieux_annot_file, pial_file, inflated_file, hemisphere, par
 
 def convert_seg(orig_label_file, lut_file, rules_file, vep_label_file):
     mgz_orig = nib.load(orig_label_file)
-    labelvol = mgz_orig.get_data().copy()
+    labelvol = mgz_orig.get_fdata().astype(int).copy()
+    
     affine = mgz_orig.affine
     colorlut = ColorLut(lut_file)
 
@@ -378,7 +387,7 @@ def convert_seg(orig_label_file, lut_file, rules_file, vep_label_file):
             raise ValueError("Unknown rule %s" % rule[0])
 
     assert np.sum(labelvol < 0) == 0
-
+    
     mgz_vep = nib.freesurfer.mghformat.MGHImage(labelvol, affine, mgz_orig.header)
     nib.save(mgz_vep, vep_label_file)
 

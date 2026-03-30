@@ -1,4 +1,5 @@
 # Virtual epileptic patient atlas 
+## (small changes to make it compatible with numpy 1.26 and nibabel above 3.0)
 
 This repository contains the code to reconstruct the virtual epileptic patient (VEP) atlas on a given subjects T1 image. 
 The T1 image is processed with Freesufers recon-all pipeline. 
@@ -10,9 +11,8 @@ An overview of the atlas and the labelling can be found in
 * Freesurfer 
 	* Download available here https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
 * Python with numpy, nibabel and sklearn 
-	* If you have conda installed you can use the following command with the provided environment.yml to create a new python environment with the necessary packages.
-	* conda env create -f environment.yml
-	
+	you can install all dependen using 
+	`pip install -r requirements.txt` in the right python environment
 
 
 ## Run 
